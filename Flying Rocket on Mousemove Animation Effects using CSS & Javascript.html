@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rocket Animation Effects | Part 2</title>
+	<link rel="stylesheet" type="text/css" href="Flying Rocket on Mousemove Animation Effects using CSS & Javascript.css">
+</head>
+<body>
+  <!-- Please watch Part 1 First then Continue This Video -->
+  <!-- Part 1 Link in Video Description -->
+  <nav>
+    <label for="menu" class="nav_open"><i class="fa fa-bars" aria-hidden="true"></i></label>
+    <label for="menu" class="nav_close"></label>
+    <label class="logo"><a href="#" class="logo">㈱</a></label>
+    <ul class="top_banner">
+      <li><a class="active" href="#">ホーム</a></li>
+      <li><a href="#">会社概要</a></li>
+      <li><a href="#">事業内容</a></li>
+      <li><a href="#">お問い合わせ</a></li>
+      <li><a href="#">採用情報</a></li>
+    </ul>
+  </nav>
+  <div class="scene">
+    <div class="rocket">
+      <img src="rocket.png">
+    </div>
+  </div>
+  <script>
+    document.addEventListener("mousemove", function(e){
+      var rocket = document.querySelector('.rocket');
+      rocket.style.left = e.offsetX +'px';
+      rocket.style.top = e.offsetY +'px';
+    })
+
+    function stars(){
+      let count = 50;
+      let scene = document.querySelector('.scene');
+      let i = 0;
+      while(i < count){
+        let star = document.createElement('i');
+        let x = Math.floor(Math.random() * window.innerWidth);
+
+        let duration = Math.random() * 1;
+        let h = Math.random() * 100;
+
+        star.style.left =  x + 'px';
+        star.style.width =  1 + 'px';
+        star.style.height =  50+ h + 'px';
+        star.style.animationDuration = 0.5+ duration + 's';
+
+        scene.appendChild(star);
+        i++
+      }
+    }
+    stars();
+  </script>
+</body>
+</html>
